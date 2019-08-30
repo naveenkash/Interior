@@ -1,0 +1,176 @@
+.consult{
+    width: 33%;
+    height: auto;
+    /* padding-right: 25px; */
+    padding-left: 15px;
+    margin-top: 20px;
+}
+.discount-heading{
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+}
+.discount-heading p{
+    background: #0D0D0D;
+    display: inline-block;
+    padding: 8px;
+    padding-left: 4px;
+    padding-right: 50px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #C3C3C3;
+    font-weight: bold;
+    border-radius: 20px;
+}
+.discount-heading p span{
+    padding: 4px 12px;
+    background: #FDEF00;
+    border-radius: 20px;
+    color: #171717;
+    font-weight: bold;
+    margin-right: 8px;
+    font-size: 14px;
+}
+.craft{
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+}
+.craft h1{
+    margin-bottom: 40px;
+    color: #C4C4C4;
+    font-size: 2.3em;
+}
+.craft p{
+    line-height: 25px;
+    /* font-size: 14px; */
+    color: #C4C4C4;
+}
+.email-consult{
+    width: 100%;
+    height: auto;
+}
+.email-input{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.email-input input[type=email]{
+    width: 100%;
+    padding: 20px;
+    padding-left: 65px;
+    border-radius: 5px;
+    background: #000000;
+    border: none;
+    outline: none;
+    color: #C4C4C4;
+    font-size: 16px;
+    margin-bottom: 40px;
+    position: relative;
+}
+.email-input svg{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 18px;
+    height: 18px;
+    transform: translate(-50%,-50%)
+}
+.email-btn{
+    display: flex;
+    align-items: center;
+}
+.consult-btn {
+    display: block;
+    width: auto;
+    margin-right: 25px;
+}
+.consult-btn button{
+padding: 16px 25px;
+border-radius: 5px;
+outline: none;
+border: none;
+font-size: 12px;
+font-weight: bold;
+background: #FDEF00;
+}
+.explore-more {
+    display: flex;
+    align-items: center;
+}
+.explore-more a{
+    text-decoration: none;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+
+}
+.explore-more a p{
+font-size: 13px;
+font-weight: bold;
+color: #C4C4C4;
+margin-right: 7px;
+}
+.more-arrow{
+    width: 15px;
+    height: 1px;
+    background: #C4C4C4;
+    display:inline-block;
+    position: relative;
+}
+.more-arrow::before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: 0;
+    width:7px;
+    height: 1px;
+    background: #C4C4C4;
+    transform:rotate(35deg);
+}
+.more-arrow::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width:7px;
+    height: 1px;
+    background: #C4C4C4;
+    transform:rotate(-35deg);
+}
+.explore-more:hover .more-arrow{
+    animation:arr 1s infinite ease;
+}
+@keyframes arr{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(10px);
+        
+    }
+    /* 0%{
+        transform: translateX(0);
+    }
+    10%{
+        transform: translateX(0px);
+    }
+    20%{
+        transform: translateX(2px);
+    }
+    40%{
+        transform: translateX(4px);
+    }
+    60%{
+        transform: translateX(6px);
+    }
+    70%{
+        transform: translateX(8px);
+    }
+    80%{
+        transform: translateX(10px);
+    }
+    100%{
+        transform: translateX(0);
+    } */
+}
