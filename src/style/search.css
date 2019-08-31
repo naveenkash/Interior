@@ -1,0 +1,103 @@
+.search{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    background: rgba(255, 255, 255, 0.979);
+    width: 100%;
+    height: 100%;
+
+}
+.search-close{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border-radius: 20px;
+    background: #FCEE00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+.searchcross1,.searchcross2{
+    width: 50%;
+    height: 2px;
+    background: rgb(51,51,51) ;
+
+}
+.searchcross2{
+    position: absolute;
+    top: 48.5%;
+    left: 25%;
+    transform: rotate(90deg);
+}
+.search-wrapper{
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.search-input{
+    width:600px;
+    height: auto;
+    /* background: firebrick; */
+
+}
+.search-input h1{
+margin-bottom: 30px;
+color: rgb(32, 32, 29);
+font-weight: 400;
+letter-spacing: -0.025em;
+}
+.input-wrapper{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.input-wrapper input{
+    width: 100%;
+    height: 70px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    padding: 16px;
+    color: rgb(32, 32, 29);
+    box-shadow: rgba(35, 49, 90, 0.08) 0px 3px 20px;
+    padding-left: 39px;
+    padding-right: 80px;
+    border-radius: 5px;
+}
+.input-wrapper span{
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.input-wrapper span svg{
+    width: 20px;
+    height: 20px;
+}
+.searchclr{
+    color: rgb(51,51,51);
+}
+.search-input p{
+    margin-top: 17px;
+    margin-left: 30px;
+    font-size: 15px;
+    color: rgba(32, 32, 29, 0.55);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: rgba(0, 0, 0, 0.004) 1px 1px 1px;
+    font-family:'Roboto', sans-serif;
+}

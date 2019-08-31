@@ -5,7 +5,7 @@ import google from '../../assets/google.jpg'
 export class user extends Component {
     constructor(props) {
         super(props)
-        this.state = { loginClicked: true, regClicked: false }
+        this.state = { loginClicked: true, regClicked: false ,open:true}
     }
     login = () => {
         this.setState({ loginClicked: true, regClicked: false })
@@ -44,10 +44,19 @@ export class user extends Component {
         }
 
     }
+    closeUser=(e)=>{
+        e.preventDefault();
+        // this.setState({open:false});
+        this.props.open(!this.state.open)
+    }
     render() {
         return (
-            <div className="user">
-                <div className="user-wrapper">
+            <div className="user ">
+                <div className="user-close" onClick={this.closeUser}>
+                    <div className="cross1"></div>
+                    <div className="cross2"></div>
+                </div>
+                <div className="animated user-wrapper fadeInUp">
                     <div className="user-container">
                         <div className="user-bg">
                             <img src={bg} alt="" />

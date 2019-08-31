@@ -1,0 +1,215 @@
+.project{
+    width: 100%;
+    height: auto;
+    margin-top: 140px;
+    padding: 130px 0 260px 0;
+    background-image: url('../assets/project-bg.svg');
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+.project-wrapper{
+    max-width: 1360px;
+    width: 100%;
+    padding: 0 30px;
+    margin:  0 auto;
+    position: relative;
+}
+.project-wrapper::after{
+    content: "";
+    display: block;
+    width: calc(100% + 30px);
+    height: 70px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: -260px;
+    left: -15px;
+}
+.project-head{
+width: 100%;
+height: auto;
+padding-bottom: 70px;
+}
+/* .project-head h5{
+    color: rgb(53, 47, 217);
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0px 0px 15px;
+    font-family: 'Roboto',sans-serif;
+}
+.project-head h2{
+    color: rgb(25, 25, 25);
+    font-size: 36px;
+    line-height: 54px;
+    font-weight: 600;
+    margin: 0px;
+} */
+
+.project-slide{
+width: 100%;
+padding: 80px 60px;
+position: relative;
+display: flex;
+background: white;
+}
+.project-slider{
+     width: calc(100% - 488px);
+    overflow: hidden;
+    
+}
+.project-slider ul{
+    padding: 0;
+    margin: 0;
+    transition: 0.3s ease; 
+}
+.project-slider-container{
+   width: 3460px;
+    display: flex;
+
+}
+.project-slider ul li{
+    list-style-type: none;
+    max-width: 692px;
+    touch-action: pan-y;
+}
+.project-slider-content {
+width: 100%;
+}
+.project-img{
+    width: 488px;
+    position:relative;
+}
+.project-img img{
+    position: absolute;
+    bottom: -80px;
+    right: 0px;
+    max-width: 100%;
+    height: auto;
+}
+.project-slider-content p{
+    color: rgb(78, 88, 101);
+    font-size: 16px;
+    line-height: 26px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 30px;
+}
+.slide-glider{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    /* position: absolute;
+    bottom: 40px;
+    left: 80px; */
+    margin-top: 20px;
+}
+
+.glide-prev{
+    width: 35px;
+    height: 30px;
+    overflow: hidden;
+    padding-left: 2px;
+    display: inline-block;
+    margin-right: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.glide-prev-left{
+    width: 100%;
+    height: 2px;
+    background: rgb(198, 198, 198);
+    display:inline-block;
+    position: relative;
+}
+.glide-prev-top{
+    position: absolute;
+    top: 0px;
+    left: -18px;
+    width:32px;
+    height: 2px;
+    background: rgb(198, 198, 198);
+    transform:rotate(0deg);
+    transition: 0.3s;
+}
+.glide-prev-bottom{
+    position: absolute;
+    bottom: 0px;
+    left: -18px;
+    width:32px;
+    height: 2px;
+    background: rgb(198, 198, 198);
+    transition: 0.3s;
+    transform:rotate(0deg);
+}
+
+.glide-prev:hover .glide-prev-top{
+    background-color: rgb(53, 47, 217);
+    /* top: -5px; */
+    transform:rotate(-42deg);
+}
+.glide-prev:hover .glide-prev-bottom{
+    background-color: rgb(53, 47, 217);
+    /* top: 5px; */
+    transform:rotate(42deg);
+}
+.glide-prev:hover{
+    width: 55px;
+}
+.glide-prev:hover .glide-prev-left{
+    background-color: rgb(53, 47, 217);
+}
+.glide-next{
+    height: 18px;
+    cursor: pointer;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+    padding: 0px;
+}
+.glide-next span{
+        display: block;
+        height: 2px;
+        position: relative;
+        width: 45px;
+        background-color: rgb(53, 47, 217);
+    
+}
+.glide-next span::before{
+    background-color: rgb(53, 47, 217);
+    transform: rotate(42deg);
+    content: "";
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: rgb(53, 47, 217);
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    z-index: 1;
+    border-radius: 4px;
+    transition: all 0.3s ease 0s;
+}
+.glide-next span::after{
+    background-color: rgb(53, 47, 217);
+    transform: rotate(-42deg);
+    content: "";
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: rgb(53, 47, 217);
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+    z-index: 1;
+    border-radius: 4px;
+    transition: all 0.3s ease 0s;
+}
