@@ -6,6 +6,8 @@ import Feature from './components/feature.js';
 import About from './components/aboutus.js';
 import Project from './components/project.js';
 import Team from './components/team.js';
+import News from './components/news.js';
+import Testimonial from './components/testimonial.js';
 export default class App extends React.Component {
  
   render() {
@@ -16,6 +18,8 @@ export default class App extends React.Component {
         <About/>
         <Project/>
         <Team/>
+        <News/>
+        <Testimonial/>
         <div className="h"></div>
       </div>
     );

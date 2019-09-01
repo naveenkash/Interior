@@ -158,7 +158,7 @@ width: 100%;
     transform:rotate(42deg);
 }
 .glide-prev:hover{
-    width: 55px;
+    width: 45px;
 }
 .glide-prev:hover .glide-prev-left{
     background-color: rgb(53, 47, 217);

@@ -1,0 +1,85 @@
+.testimonial{
+    width: 100%;
+    padding: 170px 0 130px 0;
+}
+.testimonial-head{
+    padding-bottom: 70px;
+}
+.testimonial-container{
+    display: flex;
+    align-items: center;
+    min-height: 250px;
+    /* -webkit-box-align: center; */
+}
+.testimonial-slider{
+    width: calc(100% - 500px);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(244, 244, 253, 0.83) 1px 2px 80px;
+    position: relative;
+    border-radius: 30px;
+    padding: 85px 90px 90px 70px;
+    max-height: 410px;
+}
+.testimonial-slider-container{
+    /* width: 100%; */
+    overflow: hidden;
+}
+.testimonial-slide{
+    width: 3960px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+.test-glide{
+    position: absolute;
+    top: 140px;
+    right: 90px;
+    width: auto !important;
+}
+.test-card{
+    background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjMuMjgzIiBoZWlnaHQ9IjEwMC4yOTgiPjxwYXRoIGQ9Ik0xMjMuMjgzIDEyLjAxNWE0OS4zNDggNDkuMzQ4IDAgMCAxLTEyLjUzNyAxMy4wNnYzLjEzNHEwIDI3LjQyNS0xOS43MiA0OS43NTdUMzguNjU3IDEwMC4zQTY5Ljc3MiA2OS43NzIgMCAwIDEgMCA4OC44MDZhNTUuMTg4IDU1LjE4OCAwIDAgMCA2LjAwNy41MjIgNDkuMTMyIDQ5LjEzMiAwIDAgMCAzMS4zNDMtMTAuOTcgMjUuNDI2IDI1LjQyNiAwIDAgMS0xNC42MjctNS4wOTMgMjMuOTI4IDIzLjkyOCAwIDAgMS04Ljg4MS0xMi40MDcgMzEuNDI3IDMxLjQyNyAwIDAgMCA0LjcuNTIyIDI5LjM2IDI5LjM2IDAgMCAwIDYuNzkxLTEuMDQ1IDI1LjUzMiAyNS41MzIgMCAwIDEtMTQuNS04Ljc1IDI0LjA3MiAyNC4wNzIgMCAwIDEtNS44Ny0xNi4wNjN2LS4yNjFBMjMuODE0IDIzLjgxNCAwIDAgMCAxNi40NTUgMzguNFE1LjIyNCAzMS4wODIgNS4yMjQgMTcuMjM5QTI1LjEzMSAyNS4xMzEgMCAwIDEgOC42MTkgNC43UTI4LjczMSAyOS41MTUgNjAuNiAzMS4wODJhMjIuODMgMjIuODMgMCAwIDEtLjUyMi01Ljc0NiAyNC40OTEgMjQuNDkxIDAgMCAxIDcuMzEzLTE4LjAyMkEyNC40OTEgMjQuNDkxIDAgMCAxIDg1LjQxIDBhMjQuMTM0IDI0LjEzNCAwIDAgMSAxOC4yODQgOC4xIDQ3LjA3OSA0Ny4wNzkgMCAwIDAgMTYuMTk0LTYuMjY5IDIzLjE2NiAyMy4xNjYgMCAwIDEtMTEuMjMxIDE0LjEgNDMuMTM2IDQzLjEzNiAwIDAgMCAxNC42MjYtMy45MTZ6bTAgMCIgZmlsbD0iI2Y1ZjVmYyIvPjwvc3ZnPg==");
+    background-size: 123px;
+    padding-left: 60px;
+    margin-bottom: 50px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+.test-card p a{
+    text-decoration: none;
+    color: rgb(81, 30, 163);
+}
+.userInfo{
+    width: 100%;
+    padding-right: 10px;
+}
+/* .test-card h3{
+    font-size: 24px;
+    line-height: 36px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+} */
+.userInfo p{
+    
+    color: rgb(78, 88, 101);
+    font-size: 16px;
+    line-height: 26px;
+    font-family: 'Roboto', sans-serif;
+}
+.testimonial-slider-img{
+    width: 500px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 450px;
+    position: relative;
+    margin-left: 130px;
+}

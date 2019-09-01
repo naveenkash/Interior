@@ -9,6 +9,7 @@
     width: 100%;
     height: auto;
     overflow: hidden;
+    scroll-snap-type: x mandatory;
 }
 .slider-arrows{
     position: absolute;
@@ -114,13 +115,14 @@
     cursor: pointer;
 }
 .slide{
-    width: 50%;
+    width: 306px;
     height: 550px;
     /* background: firebrick; */
     border-radius: 30px;
     margin: 0 10px;
     overflow: hidden;
     position: relative;
+    scroll-snap-align: start;
 }
 
 .slide img{
