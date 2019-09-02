@@ -1,0 +1,114 @@
+.newsletter{
+    width: 100%;
+    padding: 50px 0 0px 0;
+    background: rgb(251, 250, 254);
+}
+.newsletter-wrapper{
+    width: 768px;
+    padding: 0 30px;
+    margin:  0 auto;
+    text-align: center;
+    padding-bottom: 130px;
+}
+.newsletter-wrapper p{
+    color: rgb(78, 88, 101);
+    font-size: 16px;
+    line-height: 26px;
+    font-family: 'Roboto', sans-serif;
+}
+.newsletter-head{
+    padding-bottom: 70px;
+}
+.newsletter-from{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+.newsletter-input{
+    width: calc(100% - 132px);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    padding-right: 20px
+}
+.newsletter-input input{
+    width: 100%;
+    font-size: 16px;
+    color: rgb(25, 25, 25);
+    background-color: rgb(255, 255, 255);
+    padding: 20px 25px 20px 65px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(244, 244, 253);
+    transition: all 0.3s ease 0s;
+    outline: none;
+}
+.newsletter-input span{
+    position: absolute;
+    left: 22px;
+}
+.newsletter-input span i{
+    color: rgb(126, 126, 126);
+    display: inline-block;
+}
+.newsletter-input svg{
+    width: auto;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.newsletter-button{
+    width: 132px;
+    height: 60px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.newsletter-button button{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    min-height: 48px;
+    min-width: 48px;
+    font-family: inherit;
+    font-weight: 700;
+    text-transform: capitalize;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: rgb(25, 25, 25);
+    background-color: rgb(253, 239, 0);
+    box-sizing: border-box;
+    border-radius: 0px;
+    text-decoration: none;
+    border-width: 0px;
+    border-style: initial;
+    border-image: initial;
+    transition: all 0.3s ease 0s;
+    border-color: rgb(253, 239, 0);
+    outline: none;
+}
+.newsletter-button button span{
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.newsletter-curve{
+    width: 100%;
+
+}
+.newsletter-curve svg{
+    width: 100%;
+    margin-bottom: -5px;
+    fill: rgb(25, 25, 25);
+}

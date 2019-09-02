@@ -2,6 +2,12 @@
     width: 100%;
     padding: 170px 0 130px 0;
 }
+.testimonial-wrapper{
+    max-width: 1360px;
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+}
 .testimonial-head{
     padding-bottom: 70px;
 }
@@ -25,11 +31,16 @@
     overflow: hidden;
 }
 .testimonial-slide{
-    width: 3960px;
+    width: 3320px;
     display: flex;
     align-items: center;
     position: relative;
-
+    padding: 0;
+    margin: 0;
+}
+.testimonial-slide li{
+    list-style: none;
+    width: 640px;
 }
 .test-glide{
     position: absolute;
@@ -82,4 +93,60 @@
     height: 450px;
     position: relative;
     margin-left: 130px;
+}
+.testimonial-slider-img button{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+.btn5{
+    position: absolute;
+}
+ .btn-active::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: scale(1.25);
+    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(218, 218, 218);
+}
+.btn-active img{
+    width: 105px;
+    height: 105px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 30px -3px;
+}
+.btn1{
+    position: absolute;
+    top: 0;
+}
+.btn2{
+    position: absolute;
+    left: 0;
+}
+.btn3{
+    position: absolute;
+    bottom: 0;
+}
+.btn4{
+    position: absolute;
+    right: 0;
+}
+.testimonial-slider-img button img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 0.27s ease 0s;
+    display: block;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
 }

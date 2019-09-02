@@ -1,0 +1,137 @@
+.footer {
+    background: rgb(25, 25, 25);
+    width: 100%;
+    padding: 70px 0 40px 0;
+    background-image: url('../assets/world.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.footer-wrapper {
+    max-width: 1330px;
+    padding: 0 30px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer-container {
+    margin-left: -15px;
+    margin-right: -15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-address {
+    width: 28%;
+}
+
+.footer-address ul {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.footer-address ul li {
+    list-style: none;
+    margin-right: 30px;
+}
+
+.footer-address ul li:nth-last-child() {
+    margin-right: 0;
+}
+
+.footer-address ul li:hover a {
+    color: #FDEF00;
+}
+
+.footer-address ul li a {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    line-height: 1;
+    color: rgb(126, 126, 126);
+    position: relative;
+    transition: 0.3s;
+}
+
+.footer-address ul li a svg {
+    width: 15px;
+    height: auto;
+}
+.footer-address p{
+    color: rgb(198, 198, 198);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+.footer-address a{
+    text-decoration: none;
+}
+.footer-address a img{
+    width: 110px;
+    margin-bottom: 20px;
+}
+.footer-link {
+    width: 72%;
+    display: flex;
+    align-items: center;
+}
+
+.link-box {
+    width: 25%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.link-box h3 {
+    color: rgb(198, 198, 198);
+    font-size: 14px;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.link-box ul {
+    padding: 0;
+    margin: 0;
+}
+.link-box ul li{
+    list-style: none;
+    transition: 0.3s;
+}
+.link-box ul li a {
+    color: rgb(126, 126, 126);
+    font-size: 14px;
+    line-height: 35px;
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    font-family: 'Roboto',sans-serif;
+}
+.link-box ul li:hover{
+    transform: translate(10px) ;
+    color: white;
+}
+.link-box ul li:hover a{
+    transform: scale(1.03);
+    color: white;
+}
+.copyright{
+    width: 100%;
+    margin-top: 81px;
+    padding-top: 30px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    border-top: 1px solid rgb(33, 33, 33);
+}
+.copyright p{
+    color: rgb(70, 70, 70);
+    margin: 0px;
+    font-family: 'Roboto',sans-serif;
+}
+.copyright p a{
+    color: rgb(70, 70, 70);
+    margin: 0px;
+}

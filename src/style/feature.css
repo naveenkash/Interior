@@ -1,3 +1,10 @@
+.show-head{
+    opacity: 1;
+
+}
+.hide-head{
+    opacity: 0;
+}
 .feature{
     width: 100%;
     padding: 80px 0;

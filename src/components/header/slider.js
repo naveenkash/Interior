@@ -29,40 +29,12 @@ export class slider extends Component {
     }
     onMouseLeave = () => {
         this.isDown = false;
-        // var left = this.state.left;
-        // for (let i = 0; i < 6; i++) {
-        //     this.el = 306*[i]
-        //     console.log(this.el);
-            
-        //     if (left<=this.el) {
-        //      this.setState({left:this.el},()=>{})
-        //     //  return
-        //     }
-        //     console.log(this.state.left);
-            
-        // }
     }
     onMouseUp = () => {
         this.isDown = false;
         this.slider.current.style.cursor = 'pointer';
-        // var left = this.state.left;
-        // for (let i = 0; i < 6; i++) {
-        //     this.el = 306*[i]
-        //     console.log(this.el);
-            
-        //     if (left<=this.el) {
-        //      this.setState({left:this.el},()=>{})
-        //     //  return
-        //     }
-        //     console.log(this.state.left);
-            
-        // }
-        
     }
    
-//    componentDidUpdate(){
-// this.moveslider();
-//    }
     onMouseMove = (e) => {
         if (!this.isDown) {
             return;
@@ -77,7 +49,7 @@ export class slider extends Component {
         this.setState({ left: finalValue }, () => { });
         this.setState({ percent: false })
     }
-    goLeftPercent = () => {
+    goLeftPixel = () => {
         return {
             transform: `translatex(${this.p}px)`,
             transition: '0.3s'
@@ -127,10 +99,8 @@ export class slider extends Component {
         
         return (
             <div className="slider">
-                {/* <h1>{this.p}</h1>
-                <h1>{this.state.left}</h1> */}
                 <div className="slider-wrapper" >
-                    <div onMouseDown={this.onMouseDown} style={this.state.percent ? this.goLeftPercent() : this.mouseMove()} onMouseUp={this.onMouseUp} onMouseLeave={this.onMouseLeave} onMouseMove={this.onMouseMove} ref={this.slider} className="slider-container">
+                    <div onMouseDown={this.onMouseDown} style={this.state.percent ? this.goLeftPixel() : this.mouseMove()} onMouseUp={this.onMouseUp} onMouseLeave={this.onMouseLeave} onMouseMove={this.onMouseMove} ref={this.slider} className="slider-container">
                         {slides.map(slide => (
                             <div className="slide">
                                 <img src={slide.src} alt="" />

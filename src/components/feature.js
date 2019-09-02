@@ -4,11 +4,30 @@ import design from '../assets/c-design.svg';
 import island from '../assets/island.svg';
 import bed from '../assets/bed.svg';
 export class feature extends Component {
+    constructor(props){
+        super(props)
+        this.feat = React.createRef();
+    }
+    componentDidMount() {
+        window.addEventListener('scroll',()=>{
+
+            var container = document.querySelector(".feature");
+            var head= document.querySelector(".feature-head");
+            var containerOffsetTop = container.offsetTop;
+            var clientHeight = container.clientHeight;
+            var halfClientHeight = clientHeight / 1.5;
+            var res = containerOffsetTop - halfClientHeight;
+            if (window.pageYOffset >= res) {
+              head.classList.add("animated", "fadeInUp","show-head");
+              head.classList.remove('hide-head');
+            }
+        })
+    }
     render() {
         return (
-            <div className="feature">
+            <div ref={this.feat} className="feature">
                 <div className="feature-wrapper">
-                    <div className="feature-head">
+                    <div className="feature-head hide-head">
                         <h5>OUR SERVICES</h5>
                         <h2>Featured Service that We Provide</h2>
                     </div>
