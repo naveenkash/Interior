@@ -1,6 +1,6 @@
 .header{
-    height: 100vh;
     min-height: 100vh;
+    height: 100vh;
     width: 100%;
     background: #171717;
     margin-bottom: 80px;
@@ -18,4 +18,35 @@
     padding:0px;
     display: flex;
     align-items: center;
+}
+@media only screen and (max-width:1600px){
+    .header-wrapper{
+        
+        padding: 0 80px;
+    }
+}
+@media only screen and (max-width:1360px){
+    .header-wrapper{
+        
+        padding: 0 60px;
+    }
+}
+@media only screen and (max-width:991px){
+    .header-wrapper{
+        
+        padding: 0 30px;
+    }
+}
+@media only screen and (max-width:767px){
+    .header-wrapper{
+        flex-direction: column;
+        padding: 135px 30px 80px 30px;
+        background: #171717;
+    }
+    .header-content{
+        flex-direction: column;
+    }
+    .header{
+        height: auto;
+    }
 }

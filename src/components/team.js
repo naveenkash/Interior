@@ -6,35 +6,81 @@ import member3 from '../assets/member3.jpg'
 export class team extends Component {
     constructor(props){
         super(props)
+        
+        this.container = React.createRef();
+        this.slide = React.createRef();
+        this.slider = React.createRef();
         this.state={
             scroll:0
         }
         this.s=0;
     }
     back=()=>{
-        if (this.s<-900) {
-      return
+        if (this.s===0) {
+      return this.setState({scroll:0})
         }
-        this.s+= -450;
+        this.s+= this.state.width;
         this.setState({scroll:this.s})
     }
     next=()=>{
-        if (this.s===0) {
+        if (this.s<-900) {
             return
               }
-              this.s+= 450;
+              this.s+= -this.state.width;
               this.setState({scroll:this.s})
+    }
+    setLi=()=>{
+        return{
+            width:this.state.width
+        }
     }
     moveT=()=>{
         return {
             transform: `translatex(${this.s}px)`,
-            transition: '0.3s'
+            transition: '0.3s',
+            width:this.state.width*6
         }
+    }
+    componentDidMount() {
+        window.addEventListener('scroll',()=>{
+
+            var container = document.querySelector(".team");
+            var head= document.querySelector(".team-head");
+            var content= document.querySelector(".team-slider-container");
+            var glides= document.querySelector(".team-glide");
+            var containerOffsetTop = container.offsetTop;
+            var clientHeight = container.clientHeight;
+            var halfClientHeight = clientHeight / 1.5;
+            var res = containerOffsetTop - halfClientHeight;
+            if (window.pageYOffset >= res) {
+              head.classList.add("animated", "fadeInUp","show");
+              glides.classList.add("animated", "fadeInUp","show");
+              content.classList.add("animated", "fadeInUp","show");
+              content.classList.remove('hide');
+              head.classList.remove('hide');
+              glides.classList.remove('hide');
+            }
+            
+        })
+        var  sliderSize = (this.slider.current.clientWidth/3 *100 /100);
+     Math.floor(sliderSize)
+        console.log(sliderSize);
+        
+        window.addEventListener('resize',()=>{
+                this.setState({width:this.slider.current.clientWidth/3})
+              })
+              
+              this.setState({width:sliderSize},()=>{
+               
+              console.log({width:this.state.width});
+              this.setLi();
+                this.moveT();
+              })
     }
     render() {
         const social =[
             {svg:<svg fill="currentColor" height="16" width="16" viewBox="0 0 512 512"><path d="M288,192v-38.1c0-17.2,3.8-25.9,30.5-25.9H352V64h-55.9c-68.5,0-91.1,31.4-91.1,85.3V192h-45v64h45v192h83V256h56.4l7.6-64
-            H288z"></path></svg>,link:'https://naveenkashyap.com'},
+            H288z"></path></svg>,link:'https://naveenkashyap.com' ,id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)}  ,   
             {svg:<svg fill="currentColor" height="16" width="16" viewBox="0 0 512 512" ><g><g><g><path d="M256,64C150,64,64,150,64,256c0,106.1,86,192,192,192s192-85.9,192-192C448,150,362,64,256,64z M256,415.5
 			c-88.1,0-159.5-71.4-159.5-159.5c0-88.1,71.4-159.5,159.5-159.5c88.1,0,159.5,71.4,159.5,159.5C415.5,344.1,344.1,415.5,256,415.5
 			z"><path d="M256,64C150,64,64,150,64,256c0,106.1,86,192,192,192s192-85.9,192-192C448,150,362,64,256,64z M256,415.5
@@ -49,7 +95,9 @@ export class team extends Component {
 			c-0.1,2.4-0.2,4.8-0.2,7.3c0,29.1,9.7,55.9,26,77.4C178.9,301,214.9,274.2,258,256.1z"><path d="M258,256.1c3.9-1.6,8.8-3,14.3-4.3c-3.4-8.3-7.1-16.4-10.8-24.3c-39.1,12.6-84.6,20.3-133.3,21.3
 			c-0.1,2.4-0.2,4.8-0.2,7.3c0,29.1,9.7,55.9,26,77.4C178.9,301,214.9,274.2,258,256.1z"></path></path><path d="M282.6,278.2c-6.9,1.5-12.9,3.2-17.4,5.3c-37.1,16.8-68.3,41.6-90.4,71.5c22.1,18.2,50.4,29,81.2,29
 			c18.5,0,36-3.9,51.8-10.9c-2.7-15.1-6-30.3-10-45.7C293.4,310.5,288.2,294,282.6,278.2z"><path d="M282.6,278.2c-6.9,1.5-12.9,3.2-17.4,5.3c-37.1,16.8-68.3,41.6-90.4,71.5c22.1,18.2,50.4,29,81.2,29
-            c18.5,0,36-3.9,51.8-10.9c-2.7-15.1-6-30.3-10-45.7C293.4,310.5,288.2,294,282.6,278.2z"></path></path></g></g></g></svg>,link:'https://naveenkashyap.com'},
+            c18.5,0,36-3.9,51.8-10.9c-2.7-15.1-6-30.3-10-45.7C293.4,310.5,288.2,294,282.6,278.2z"></path></path></g></g></g></svg>,link:'https://naveenkashyap.com',
+            id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)},
+            
             {
                 svg:<svg fill="currentColor" height="16" width="16" viewBox="0 0 512 512"  ><g><path d="M242.1,275.6l-18.2-13.7l-0.1-0.1c-5.8-4.6-10-8.3-10-14.7c0-7,5-11.8,10.9-17.4l0.5-0.4c20-15.2,44.7-34.3,44.7-74.6
                 c0-26.9-11.9-44.7-23.3-57.7h13L320,64H186.5c-25.3,0-62.7,3.2-94.6,28.6l-0.1,0.3C70,110.9,57,137.4,57,163.5
@@ -66,6 +114,7 @@ export class team extends Component {
                 c9.2,15.5,14.9,36.1,14.9,53.6c0,4.9,0,20-10.2,29.8c-7,6.7-18.7,11.4-28.6,11.4c-20.5,0-33.5-14.7-40.7-27
                 C120.4,173.5,116.7,153.1,116.7,139.9z M237.8,368c0,27.4-25.2,44.5-65.8,44.5c-48.1,0-80.3-20.6-80.3-51.3
                 c0-26.1,21.5-36.8,37.8-42.5c18.9-6.1,44.3-7.3,50.1-7.3c3.9,0,6.1,0,8.7,0.2C224.9,336.8,237.8,347.7,237.8,368z"></path></path><polygon points="402,142 402,64 368,64 368,142 288,142 288,176 368,176 368,257 402,257 402,176 480,176 480,142 	"><polygon points="402,142 402,64 368,64 368,142 288,142 288,176 368,176 368,257 402,257 402,176 480,176 480,142 	"></polygon></polygon></g></svg>,link:'https://naveenkashyap.com'
+                ,id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
             },
             {
                 svg:<svg fill="currentColor" height="16" width="16" viewBox="0 0 512 512"><path d="M436.9,296.8c2.8-12.5,4.2-25.4,4.2-38.7c0-99.7-82-180.6-183.2-180.6c-10.7,0-21.1,0.9-31.3,2.6
@@ -82,6 +131,7 @@ export class team extends Component {
                 c-13.1,0-23.8,2.6-31.7,7.7c-7.6,4.9-11.3,10.6-11.3,17.3c0,4.1,1.2,7.5,3.7,10.5c2.6,3.1,6.2,5.9,10.9,8.2
                 c4.8,2.4,9.8,4.3,14.7,5.6c5.1,1.4,13.6,3.5,25.3,6.1c14.9,3.1,28.5,6.7,40.5,10.4c12.2,3.9,22.7,8.6,31.3,14.1
                 c8.8,5.6,15.7,12.9,20.7,21.5c4.9,8.6,7.4,19.4,7.4,31.8C364.8,318.9,360.5,332.5,351.9,344.3z"></path></svg>,link:'https://naveenkashyap.com'
+                ,id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
             },
         {
             svg:<svg fill="currentColor" height="16" width="16" viewBox="0 0 512 512"><path d="M492,109.5c-17.4,7.7-36,12.9-55.6,15.3c20-12,35.4-31,42.6-53.6c-18.7,11.1-39.4,19.2-61.5,23.5
@@ -90,32 +140,33 @@ export class team extends Component {
             c-8.1,2.2-16.7,3.4-25.5,3.4c-6.2,0-12.3-0.6-18.2-1.8c12.3,38.5,48.1,66.5,90.5,67.3c-33.1,26-74.9,41.5-120.3,41.5
             c-7.8,0-15.5-0.5-23.1-1.4C62.8,432,113.7,448,168.3,448C346.6,448,444,300.3,444,172.2c0-4.2-0.1-8.4-0.3-12.5
             C462.6,146,479,129,492,109.5z"></path></svg>,link:'https://naveenkashyap.com'
+            ,id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
         }
         ]
         const team =[
-            {memberImg:member1,memberName:'John Doe',memberRole:'Project Manager'},
-            {memberImg:member2,memberName:'Jenny Doe',memberRole:'Product Designer'},
-            {memberImg:member3,memberName:'Naina Doe',memberRole:'Data Analyst'},
-            {memberImg:member1,memberName:'John Doe',memberRole:'ProjectManager'},
-            {memberImg:member2,memberName:'Jenny Doe',memberRole:'Product Designer'},
-            {memberImg:member3,memberName:'Naina Doe',memberRole:'Data Analyst'}
+            {memberImg:member1,memberName:'John Doe',memberRole:'Project Manager'   ,id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)},
+            {memberImg:member2,memberName:'Jenny Doe',memberRole:'Product Designer'  ,id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)},
+            {memberImg:member3,memberName:'Naina Doe',memberRole:'Data Analyst'  ,id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)},
+            {memberImg:member1,memberName:'John Doe',memberRole:'ProjectManager' ,id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)},
+            {memberImg:member2,memberName:'Jenny Doe',memberRole:'Product Designer' ,id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)},
+            {memberImg:member3,memberName:'Naina Doe',memberRole:'Data Analyst'  ,id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)}
         ]
         return (
             <div className="team">
                 <div className="team-wrapper">
                     <div className="team-container">
-                        <div className="team-head">
+                        <div className="team-head hide">
                             <h5>OUR TEAM MEMBER</h5>
                             <h2>Meet Our Perfectionist</h2>
                         </div>
-                        <div className="team-slider-container">
+                        <div ref={this.slider} className="team-slider-container hide">
 
 
-                            <ul style={this.moveT()} className="team-slider">
+                            <ul ref={this.container} style={this.moveT()} className="team-slider">
 
                                 {
                                     team.map((t)=>(
-                                        <li className="team-slide">
+                                        <li ref={this.slide} key={t.id} style={this.setLi()} className="team-slide">
                                     <div className="team-img">
                                         <img src={t.memberImg} alt="" />
                                         <div className="team-info">
@@ -127,7 +178,7 @@ export class team extends Component {
                                         <ul>
                                             {
                                                 social.map((icon)=>(
-                                                    <li><a href={icon.link}><i>{icon.svg}</i></a></li>
+                                                    <li key={icon.id}><a href={icon.link}><i>{icon.svg}</i></a></li>
                                                 ))
                                             }
                                         </ul>
@@ -138,7 +189,7 @@ export class team extends Component {
                             </ul>
                         </div>
 
-                        <div className="slide-glider team-glide">
+                        <div className="slide-glider team-glide hide">
                             <div onClick={this.back} className="glide-prev"> <div className="glide-prev-left"><div className="glide-prev-top"></div> <div className="glide-prev-bottom"></div> </div></div>
 
                             <div onClick={this.next} className="glide-next">

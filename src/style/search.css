@@ -46,6 +46,7 @@
     width:600px;
     height: auto;
     /* background: firebrick; */
+    animation-duration: 0.7s;
 
 }
 .search-input h1{

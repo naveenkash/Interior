@@ -31,7 +31,7 @@
     overflow: hidden;
 }
 .testimonial-slide{
-    width: 3320px;
+    /* width: 3320px; */
     display: flex;
     align-items: center;
     position: relative;
@@ -40,7 +40,7 @@
 }
 .testimonial-slide li{
     list-style: none;
-    width: 640px;
+    /* width: 640px; */
 }
 .test-glide{
     position: absolute;
@@ -149,4 +149,75 @@
     max-width: 100%;
     box-sizing: border-box;
     margin: 0px;
+}
+@media only screen and (max-width:1440px){
+   .testimonial-slider-img{
+       margin-left: 80px;
+       height: 420px;
+
+   }
+   .testimonial-slider{
+       padding: 70px 60px;
+   }
+}
+@media only screen and (max-width:1200px){
+    .testimonial-slider-img{
+        width: 390px;
+        height: 400px;
+        margin-left: 60px;
+ 
+    }
+    .testimonial-slider{
+        width: calc(100% - 450px);
+        padding: 56px 50px;
+    }
+}
+
+@media only screen and (max-width:1100px){
+   .test-glide{
+       top: 90px;
+       right: 30px;
+   }
+}
+@media only screen and (max-width:990px){
+    .testimonial-slider-img{
+        max-width: 400px;
+        height: auto;
+        justify-content: space-evenly;
+        margin: 50px auto 0px;
+ 
+    }
+    .testimonial-slider{
+        width: 100%;
+       
+    }
+    .testimonial-container{
+        flex-direction: column;
+    }
+    .btn1,.btn2,.btn3,.btn4,.btn5{
+        position: relative;
+    }
+    .testimonial-slider-img button img{
+        width: 50px;
+        height: 50px;
+    }
+}
+@media only screen and (max-width:667px){
+    .testimonial-slider{
+        margin-right: 0px;
+        box-shadow: none;
+        padding: 0px;
+       
+    }
+    .test-glide{
+        top: 25px;
+        right: 50px
+    }
+}
+
+@media only screen and (max-width:550px){
+   .test-glide{
+       top: -55px;
+       right: 30px;
+   }
 }

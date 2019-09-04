@@ -22,6 +22,9 @@ export class testimonial extends Component {
         this.btnRef3 = React.createRef();
         this.btnRef4 = React.createRef();
         this.btnRef5 = React.createRef();
+        
+        this.slider = React.createRef();
+        this.container = React.createRef();
         this.previousRef = undefined;
         this.state = {
             testimonial: [
@@ -71,12 +74,7 @@ export class testimonial extends Component {
         }
         this.t = 0;
     }
-    move = () => {
-        return {
-            transform: `translatex(${this.t}px)`,
-            transition: 'all 0.3s cubic-bezier(0, 0, 0.34, 0.85) 0s'
-        }
-    }
+   
     removeClass = (buttonArray)=>{
         for (let i = 0; i < buttonArray.length; i++) {
             const element = buttonArray[i];
@@ -84,59 +82,61 @@ export class testimonial extends Component {
         }
     }
     left = () => {
-        if (this.t < -1920) {
+        if (this.t === 0) {
             return;
         }
-        this.t += -640;
+        this.t += this.state.width;
         this.setState({ left: this.t, })
         var buttonArray = document.querySelectorAll('button[data-btn-id]');
         if (this.t===0) {
             this.removeClass(buttonArray);
             buttonArray[0].classList.add('btn-active');
         }
-        if (this.t=== -640) {
+        if (this.t=== -this.slider.current.clientWidth) {
             this.removeClass(buttonArray);
             buttonArray[1].classList.add('btn-active');
         }
-        if (this.t=== -1280) {
+        if (this.t=== -this.slider.current.clientWidth*2) {
             this.removeClass(buttonArray);
             buttonArray[2].classList.add('btn-active');
         }
-        if (this.t=== -1920) {
+        if (this.t=== -this.slider.current.clientWidth*3) {
             this.removeClass(buttonArray);
             buttonArray[3].classList.add('btn-active');
         }
-        if (this.t=== -2560) {
+        if (this.t=== -this.slider.current.clientWidth*4) {
             this.removeClass(buttonArray);
             buttonArray[4].classList.add('btn-active');
         }
 
     }
     right = () => {
-        if (this.t === 0) {
+        if (this.t <-(this.container.current.clientWidth-this.slider.current.clientWidth) ) {
             return;
-        }
-        this.t += 640;
+        }else if(this.t >-(this.container.current.clientWidth-this.slider.current.clientWidth)){
+            
+        this.t += -this.state.width;
         this.setState({ left: this.t });
+        }
 
         var buttonArray = document.querySelectorAll('button[data-btn-id]');
         if (this.t===0) {
             this.removeClass();
             buttonArray[0].classList.add('btn-active');
         }
-        if (this.t=== -640) {
+        if (this.t=== -this.slider.current.clientWidth) {
             this.removeClass();
             buttonArray[1].classList.add('btn-active');
         }
-        if (this.t=== -1280) {
+        if (this.t=== -this.slider.current.clientWidth*2) {
             this.removeClass();
             buttonArray[2].classList.add('btn-active');
         }
-        if (this.t=== -1920) {
+        if (this.t=== -this.slider.current.clientWidth*3) {
             this.removeClass();
             buttonArray[3].classList.add('btn-active');
         }
-        if (this.t=== -2560) {
+        if (this.t=== -this.slider.current.clientWidth*4) {
             this.removeClass();
             buttonArray[4].classList.add('btn-active');
         }
@@ -153,10 +153,34 @@ export class testimonial extends Component {
     scrollToElement = (profile) => {
         this.removeClass();
         let index = this.state.testimonial.findIndex(post => post.id === profile.id);
-        this.t = -640 * index
+        this.t = -this.slider.current.clientWidth * index
         this.setState({ left: this.t })
         profile.btnRef.current.classList.add('btn-active')
     }
+    
+   
+    li=()=>{
+        return{
+            width:this.state.width
+        }
+    }  
+    move = () => {
+        return {
+            transform: `translatex(${this.t}px)`,
+            transition: 'all 0.3s cubic-bezier(0, 0, 0.34, 0.85) 0s',
+            width:this.state.width*5,
+        }
+    }
+    componentDidMount() {
+        window.addEventListener('resize',()=>{
+            this.setState({width:this.slider.current.clientWidth})
+          })
+          this.setState({width:this.slider.current.clientWidth},()=>{
+            this.li();
+            this.move();
+          })
+    }
+    
 
     render() {
 
@@ -172,11 +196,11 @@ export class testimonial extends Component {
                     <div className="testimonial-container">
 
                         <div className="testimonial-slider">
-                            <div className="testimonial-slider-container">
-                                <ul style={this.move()} className="testimonial-slide">
+                            <div ref={this.slider} className="testimonial-slider-container">
+                                <ul ref={this.container} style={this.move()} className="testimonial-slide">
                                     {
                                         this.state.testimonial.map((test) => (
-                                            <li data-li-id={test.id} key={test.id}>
+                                            <li style={this.li()} data-li-id={test.id} key={test.id}>
                                                 <div className="userInfo">
                                                     <div className="test-card">
                                                         <h3>{test.tweetname}</h3>

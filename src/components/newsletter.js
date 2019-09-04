@@ -1,15 +1,30 @@
 import React, { Component } from 'react'
 import '../style/newsletter.css'
 export class newsletter extends Component {
+    componentDidMount() {
+        window.addEventListener('scroll',()=>{
+
+            var container = document.querySelector(".newsletter");
+            var head= document.querySelector(".newsletter-wrapper");
+            var containerOffsetTop = container.offsetTop;
+            var clientHeight = container.clientHeight;
+            var halfClientHeight = clientHeight / 1.5;
+            var res = containerOffsetTop - halfClientHeight;
+            if (window.pageYOffset >= res) {
+              head.classList.add("animated", "fadeInUp","show");
+              head.classList.remove('hide');
+            }
+        })
+    }
     render() {
         return (
             <div className="newsletter">
-                <div className="newsletter-wrapper">
+                <div className="newsletter-wrapper hide">
                     <div className="newsletter-head">
                         <h5>SUBSCRIBE NEWSLETTER</h5>
                         <h2>Don’t Miss Out Any Offer</h2>
                     </div>
-                    <div className="newsletter-from">
+                    <div className="newsletter-form">
                         <div className="newsletter-input">
                             <input type="text" placeholder="Enter email adrress" />
                             <span><i>

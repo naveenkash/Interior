@@ -42,6 +42,8 @@
     height: 780px;
     background: white;
     border-radius: 5px;
+    animation-duration: 0.5s;
+    
 }
 
 .user-container {

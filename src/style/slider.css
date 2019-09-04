@@ -15,7 +15,7 @@
     position: absolute;
     bottom: -60px;
     left: 65px;
-    width: 100%;
+    width:auto;
     height: 30px;
     display: flex;
     align-items: center;
@@ -113,9 +113,10 @@
     overflow: hidden;
     pointer-events: all;
     cursor: pointer;
+    transition: 0.3s;
 }
 .slide{
-    width: 306px;
+    width: 33%;
     height: 550px;
     /* background: firebrick; */
     border-radius: 30px;
@@ -161,4 +162,39 @@
     font-weight: bold;
     color: #c4c4c4;
     transition: 0.3s;
+}
+@media only screen and (max-width:1600px){
+    .slider{
+        width: calc(100% - 560px);
+        padding-left: 0;
+    }
+    .slider-arrows{
+        left: 0;
+    }
+    
+}
+@media only screen and (max-width:1450px){
+    .slide{
+        width: 225px;
+        height: 460px;
+    }
+}
+@media only screen and (max-width:1360px){
+    .slider{
+        width: 60%;
+    }
+}
+@media only screen and (max-width:1200px){
+    .slider-container{
+        width: 300%;
+    }
+    .slide{
+        width: 55%;
+    }
+}
+@media only screen and (max-width:767px){
+   
+    .slider{
+        width: 100%;
+    }
 }

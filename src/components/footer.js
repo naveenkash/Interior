@@ -4,9 +4,9 @@ import '../style/footer.css'
 export class footer extends Component {
     render() {
         const social =[
-            {svg:<svg fill="currentColor" height="16" width="16" viewBox="0 0 512 512"><path d="M288,192v-38.1c0-17.2,3.8-25.9,30.5-25.9H352V64h-55.9c-68.5,0-91.1,31.4-91.1,85.3V192h-45v64h45v192h83V256h56.4l7.6-64
+            { id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),svg:<svg fill="currentColor" height="16" width="16" viewBox="0 0 512 512"><path d="M288,192v-38.1c0-17.2,3.8-25.9,30.5-25.9H352V64h-55.9c-68.5,0-91.1,31.4-91.1,85.3V192h-45v64h45v192h83V256h56.4l7.6-64
             H288z"></path></svg>,link:'https://naveenkashyap.com'},
-            {svg:<svg fill="currentColor" height="16" width="16" viewBox="0 0 512 512" ><g><g><g><path d="M256,64C150,64,64,150,64,256c0,106.1,86,192,192,192s192-85.9,192-192C448,150,362,64,256,64z M256,415.5
+            { id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),svg:<svg fill="currentColor" height="16" width="16" viewBox="0 0 512 512" ><g><g><g><path d="M256,64C150,64,64,150,64,256c0,106.1,86,192,192,192s192-85.9,192-192C448,150,362,64,256,64z M256,415.5
 			c-88.1,0-159.5-71.4-159.5-159.5c0-88.1,71.4-159.5,159.5-159.5c88.1,0,159.5,71.4,159.5,159.5C415.5,344.1,344.1,415.5,256,415.5
 			z"><path d="M256,64C150,64,64,150,64,256c0,106.1,86,192,192,192s192-85.9,192-192C448,150,362,64,256,64z M256,415.5
 			c-88.1,0-159.5-71.4-159.5-159.5c0-88.1,71.4-159.5,159.5-159.5c88.1,0,159.5,71.4,159.5,159.5C415.5,344.1,344.1,415.5,256,415.5
@@ -21,7 +21,7 @@ export class footer extends Component {
 			c-0.1,2.4-0.2,4.8-0.2,7.3c0,29.1,9.7,55.9,26,77.4C178.9,301,214.9,274.2,258,256.1z"></path></path><path d="M282.6,278.2c-6.9,1.5-12.9,3.2-17.4,5.3c-37.1,16.8-68.3,41.6-90.4,71.5c22.1,18.2,50.4,29,81.2,29
 			c18.5,0,36-3.9,51.8-10.9c-2.7-15.1-6-30.3-10-45.7C293.4,310.5,288.2,294,282.6,278.2z"><path d="M282.6,278.2c-6.9,1.5-12.9,3.2-17.4,5.3c-37.1,16.8-68.3,41.6-90.4,71.5c22.1,18.2,50.4,29,81.2,29
             c18.5,0,36-3.9,51.8-10.9c-2.7-15.1-6-30.3-10-45.7C293.4,310.5,288.2,294,282.6,278.2z"></path></path></g></g></g></svg>,link:'https://naveenkashyap.com'},
-            {
+            { id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
                 svg:<svg fill="currentColor" height="16" width="16" viewBox="0 0 512 512"  ><g><path d="M242.1,275.6l-18.2-13.7l-0.1-0.1c-5.8-4.6-10-8.3-10-14.7c0-7,5-11.8,10.9-17.4l0.5-0.4c20-15.2,44.7-34.3,44.7-74.6
                 c0-26.9-11.9-44.7-23.3-57.7h13L320,64H186.5c-25.3,0-62.7,3.2-94.6,28.6l-0.1,0.3C70,110.9,57,137.4,57,163.5
                 c0,21.2,8.7,42.2,23.9,57.4c21.4,21.6,48.3,26.1,67.1,26.1c1.5,0,3,0,4.5-0.1c-0.8,3-1.2,6.3-1.2,10.3c0,10.9,3.6,19.3,8.1,26.2
@@ -38,7 +38,7 @@ export class footer extends Component {
                 C120.4,173.5,116.7,153.1,116.7,139.9z M237.8,368c0,27.4-25.2,44.5-65.8,44.5c-48.1,0-80.3-20.6-80.3-51.3
                 c0-26.1,21.5-36.8,37.8-42.5c18.9-6.1,44.3-7.3,50.1-7.3c3.9,0,6.1,0,8.7,0.2C224.9,336.8,237.8,347.7,237.8,368z"></path></path><polygon points="402,142 402,64 368,64 368,142 288,142 288,176 368,176 368,257 402,257 402,176 480,176 480,142 	"><polygon points="402,142 402,64 368,64 368,142 288,142 288,176 368,176 368,257 402,257 402,176 480,176 480,142 	"></polygon></polygon></g></svg>,link:'https://naveenkashyap.com'
             },
-            {
+            { id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
                 svg:<svg fill="currentColor" height="16" width="16" viewBox="0 0 512 512"><path d="M436.9,296.8c2.8-12.5,4.2-25.4,4.2-38.7c0-99.7-82-180.6-183.2-180.6c-10.7,0-21.1,0.9-31.3,2.6
                 C210.3,69.9,191,64,170.2,64C111.6,64,64,110.9,64,168.7c0,19.4,5.3,37.5,14.6,53c-2.4,11.7-3.7,23.9-3.7,36.3
                 c0,99.8,82,180.6,183.1,180.6c11.5,0,22.7-1,33.5-3c15,7.9,32.1,12.4,50.2,12.4c58.7,0,106.2-46.9,106.2-104.7
@@ -54,7 +54,7 @@ export class footer extends Component {
                 c4.8,2.4,9.8,4.3,14.7,5.6c5.1,1.4,13.6,3.5,25.3,6.1c14.9,3.1,28.5,6.7,40.5,10.4c12.2,3.9,22.7,8.6,31.3,14.1
                 c8.8,5.6,15.7,12.9,20.7,21.5c4.9,8.6,7.4,19.4,7.4,31.8C364.8,318.9,360.5,332.5,351.9,344.3z"></path></svg>,link:'https://naveenkashyap.com'
             },
-        {
+        { id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
             svg:<svg fill="currentColor" height="16" width="16" viewBox="0 0 512 512"><path d="M492,109.5c-17.4,7.7-36,12.9-55.6,15.3c20-12,35.4-31,42.6-53.6c-18.7,11.1-39.4,19.2-61.5,23.5
             C399.8,75.8,374.6,64,346.8,64c-53.5,0-96.8,43.4-96.8,96.9c0,7.6,0.8,15,2.5,22.1c-80.5-4-151.9-42.6-199.6-101.3
             c-8.3,14.3-13.1,31-13.1,48.7c0,33.6,17.2,63.3,43.2,80.7C67,210.7,52,206.3,39,199c0,0.4,0,0.8,0,1.2c0,47,33.4,86.1,77.7,95
@@ -68,13 +68,13 @@ export class footer extends Component {
                 <div className="footer-wrapper">
                     <div className="footer-container">
                         <div className="footer-address">
-                            <a href=""><img src={logo} alt=""/></a>
+                            <a href="https://naveenkashyap.com"><img src={logo} alt=""/></a>
                             <p>123-456-7890</p>
                             <p>https://naveenkashyap.com</p>
                         <ul>
                                             {
                                                 social.map((icon)=>(
-                                                    <li><a href={icon.link}><i>{icon.svg}</i></a></li>
+                                                    <li key={icon.id}><a href={icon.link}><i>{icon.svg}</i></a></li>
                                                 ))
                                             }
                                         </ul>
@@ -83,41 +83,40 @@ export class footer extends Component {
                             <div className="link-box">
                                 <h3>ABOUT US</h3>
                                 <ul>
-                                    <li><a href="">Support Center</a></li>
-                                        <li><a href="">Customer Support</a></li>
-                                        <li><a href="">About Us</a></li>
-                                        <li><a href="">Copyright</a></li>
-                                        <li><a href="">Popular Campaign</a></li>
+                                    <li><a href="https://naveenkashyap.com">Support Center</a></li>
+                                        <li><a href="https://naveenkashyap.com">Customer Support</a></li>
+                                        <li><a href="https://naveenkashyap.com">About Us</a></li>
+                                        <li><a href="https://naveenkashyap.com">Copyright</a></li>
+                                        <li><a href="https://naveenkashyap.com">Popular Campaign</a></li>
                                 </ul>
                             </div>
                             <div className="link-box">
                                 <h3>OUR INFORMATION</h3>
                                 <ul>
-                                <li><a href="">Support Center</a></li>
-                                        <li><a href="">Customer Support</a></li>
-                                        <li><a href="">About Us</a></li>
-                                        <li><a href="">Copyright</a></li>
-                                        <li><a href="">Popular Campaign</a></li>
+                                <li><a href="https://naveenkashyap.com">Store Hours</a></li>
+                                        <li><a href="https://naveenkashyap.com">Return Policy</a></li>
+                                        <li><a href="https://naveenkashyap.com">Privacy Policy</a></li>
+                                        <li><a href="https://naveenkashyap.com">Terms & Conditions</a></li>
+                                        <li><a href="https://naveenkashyap.com">Site Map</a></li>
                                 </ul>
                             </div>
                             <div className="link-box">
                                 <h3>MY ACCOUNT</h3>
                                 <ul>
-                                <li><a href="">Support Center</a></li>
-                                        <li><a href="">Customer Support</a></li>
-                                        <li><a href="">About Us</a></li>
-                                        <li><a href="">Copyright</a></li>
-                                        <li><a href="">Popular Campaign</a></li>
+                                <li><a href="https://naveenkashyap.com">Press inquiries</a></li>
+                                        <li><a href="https://naveenkashyap.com">Social media directories</a></li>
+                                        <li><a href="https://naveenkashyap.com">Images & B-roll</a></li>
+                                        <li><a href="https://naveenkashyap.com">Permissions</a></li>
+                                        <li><a href="https://naveenkashyap.com">Speaker requests</a></li>
                                 </ul>
                             </div>
                             <div className="link-box">
                                 <h3>POLICY</h3>
                                 <ul>
-                                <li><a href="">Support Center</a></li>
-                                        <li><a href="">Customer Support</a></li>
-                                        <li><a href="">About Us</a></li>
-                                        <li><a href="">Copyright</a></li>
-                                        <li><a href="">Popular Campaign</a></li>
+                                <li><a href="https://naveenkashyap.com">Software principles</a></li>
+                                        <li><a href="https://naveenkashyap.com">Application security</a></li>
+                                        <li><a href="https://naveenkashyap.com">Unwanted software policy</a></li>
+                                        <li><a href="https://naveenkashyap.com">Responsible supply chain</a></li>
                                 </ul>
                             </div>
                         </div>

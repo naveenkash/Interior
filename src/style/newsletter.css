@@ -1,10 +1,11 @@
 .newsletter{
     width: 100%;
-    padding: 50px 0 0px 0;
+    padding: 80px 0 0px 0;
     background: rgb(251, 250, 254);
 }
 .newsletter-wrapper{
-    width: 768px;
+    width: 100%;
+    max-width: 768px;
     padding: 0 30px;
     margin:  0 auto;
     text-align: center;
@@ -19,12 +20,13 @@
 .newsletter-head{
     padding-bottom: 70px;
 }
-.newsletter-from{
+.newsletter-form{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 70px;
+    padding: 0 30px;
 }
 .newsletter-input{
     width: calc(100% - 132px);
@@ -112,3 +114,39 @@
     margin-bottom: -5px;
     fill: rgb(25, 25, 25);
 }
+
+@media only screen and (max-width:1440px){
+   .newsletter-wrapper{
+       padding: 20px 0 100px;
+   }
+   .newsletter-head{
+       padding-bottom: 56px;
+   }
+}
+@media only screen and (max-width:1200px){
+    
+    .newsletter-head{
+        padding-bottom: 50px;
+    }
+ }
+@media only screen and (max-width:667px){
+    .newsletter-wrapper{
+        padding: 60px 30px;
+        flex-wrap: wrap;
+    }
+    .newsletter-head{
+        padding-bottom: 40px;
+    }
+    .newsletter-form{
+        margin-bottom: 40px;
+    flex-direction: column;
+    padding: 0;
+    }
+    .newsletter-input{
+        width: 100%;
+        padding-right: 0;margin-bottom: 10px;
+    }
+    .newsletter-button{
+        width: 100%;
+    }
+ }

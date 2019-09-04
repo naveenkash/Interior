@@ -65,6 +65,7 @@
     color: rgb(198, 198, 198);
     font-size: 14px;
     margin-bottom: 25px;
+    word-break: break-all;
 }
 .footer-address a{
     text-decoration: none;
@@ -83,8 +84,8 @@
     width: 25%;
     padding: 0 15px;
     margin-bottom: 30px;
+    min-height: 227px;
 }
-
 .link-box h3 {
     color: rgb(198, 198, 198);
     font-size: 14px;
@@ -134,4 +135,73 @@
 .copyright p a{
     color: rgb(70, 70, 70);
     margin: 0px;
+}
+
+@media only screen and (max-width:1440px){
+   .footer-wrapper{
+       max-width: 1260px;
+   }
+}
+@media only screen and (min-width:480px){
+    .footer-link{
+        width: 70%;
+        flex-wrap: wrap;
+    }
+    .footer-address{
+        width: 30%;
+    }
+    .link-box{
+        width: 50%;
+    }
+ }
+
+@media only screen and (min-width:768px){
+    .footer-link{
+        width: 65%;
+        flex-wrap: wrap;
+    }
+    .footer-address{
+        width: 35%;
+    }
+    .link-box{
+        width: 50%;
+    }
+ }
+@media only screen and (min-width:990px){
+   .footer-link{
+       width: 72%;
+   }
+   .footer-address{
+       width: 28%;
+   }
+   .link-box{
+    width: 25%;
+}
+}
+@media only screen and (max-width:680px){
+    .footer-address ul li{
+        margin-right: 15px;
+    }
+ }
+@media only screen and (max-width:480px){
+   .footer-container{
+       flex-direction: column;
+   }
+   .link-box{
+       width: 100%;
+   }
+   .footer-link{
+       width: 100%;
+       flex-direction: column;
+   }
+   .footer-address{
+       width: 100%;
+       margin-bottom: 30px;
+   }
+   .copyright{
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 25px;
+    flex-direction: column;
+   }
 }

@@ -30,8 +30,8 @@
 .team-slider {
     display: flex;
     align-items: center;
-    width: 3100px;
-    margin-left: -25px;
+    /* width: 3100px; */
+    /* margin-left: -25px; */
 }
 
 .team-slider-container {
@@ -41,7 +41,7 @@
 }
 
 .team-slide {
-    width: 400px;
+    /* min-width: 400px; */
     margin: 0 25px;
     list-style: none;
 }
@@ -125,3 +125,9 @@ background:#FDEF00;
     display: inline-block;
      vertical-align: middle;
 }
+
+/* @media only screen and (max-width:1440px){
+   .team-slide{
+       min-width: 400px;
+   }
+} */
