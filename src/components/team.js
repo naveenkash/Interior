@@ -274,7 +274,7 @@ export class team extends Component {
         {
           memberImg: member1,
           memberName: "John Doe",
-          memberRole: "ProjectManager",
+          memberRole: "Project Manager",
           id:
             Math.random()
               .toString(36)
