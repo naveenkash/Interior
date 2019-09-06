@@ -16,32 +16,32 @@ export class slider extends Component {
             rightpercent: false,
             slides: [{
                     src: slide1,
-                    name: "Rest Room",
+                    name: "Corner",
                     id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
                 },
                 {
                     src: slide2,
-                    name: "Living Room",
+                    name: "Rest Room",
                     id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
                 },
                 {
                     src: slide3,
-                    name: "Corner",
+                    name: "Living Room",
                     id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
                 },
                 {
                     src: slide1,
-                    name: "Rest Room",
+                    name: "Corner",
                     id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
                 },
                 {
                     src: slide2,
-                    name: "Living Room",
+                    name: " Rest Room",
                     id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
                 },
                 {
                     src: slide3,
-                    name: "Corner",
+                    name: "Living Room",
                     id: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
                 }
             ]
