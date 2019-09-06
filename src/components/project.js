@@ -25,6 +25,7 @@ export class project extends Component {
     next=()=>{
         
         if (this.state.move<- (this.container.current.clientWidth-this.slide.current.clientWidth)) {
+            
             return
         }else if(this.state.move>- (this.container.current.clientWidth-this.slide.current.clientWidth)){
             
@@ -42,7 +43,7 @@ export class project extends Component {
    
     li=()=>{ 
         return{
-            width:this.state.width
+            minWidth:this.state.width
         }
     }  
 

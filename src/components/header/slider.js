@@ -8,9 +8,11 @@ import slide3 from '../../assets/slide3.png';
 export class slider extends Component {
     constructor(props) {
         super(props)
+        this.slider = React.createRef();
         this.state = {
+            animatedScroll:false,
             left: 0,
-            percent: false,
+            percent: true,
             rightpercent: false,
             slides: [{
                     src: slide1,
@@ -52,139 +54,195 @@ export class slider extends Component {
         this.p = 0;
         this.el = 0;
     }
-    onMouseDown = (e) => {
-        e.persist();
-        this.isDown = true;
-        console.log(e);
-        this.startX = e.pageX - this.slider.current.offsetLeft;
-        this.scrollLeft = this.slider.current.scrollLeft;
-        this.slider.current.style.cursor = 'grabbing';
-        console.log('mouse down ', e.pageX - this.slider.current.offsetLeft, this.slider.current.scrollLeft);
-    }
-    onMouseLeave = () => {
-        this.isDown = false;
-    }
-    onMouseUp = () => {
-        this.isDown = false;
-        this.slider.current.style.cursor = 'pointer';
-    }
+    // onMouseDown = (e) => {
+    //     e.persist();
+    //     this.isDown = true;
+    //     console.log(e);
+    //     this.startX = e.pageX - this.slider.current.offsetLeft;
+    //     this.scrollLeft = this.slider.current.scrollLeft;
+    //     this.slider.current.style.cursor = 'grabbing';
+    //     console.log('mouse down ', e.pageX - this.slider.current.offsetLeft, this.slider.current.scrollLeft);
+    // }
+    // onMouseLeave = () => {
+    //     this.isDown = false;
+    // }
+    // onMouseUp = () => {
+    //     this.isDown = false;
+    //     this.slider.current.style.cursor = 'pointer';
+    // }
 
-    onMouseMove = (e) => {
-        if (!this.isDown) {
-            return;
-        }
-        e.preventDefault();
-        var x = e.pageX - this.slider.current.offsetLeft;
-        var walk = x - this.startX;
-        this.startX = x;
-        var z = walk;
-        var finalValue = this.state.left + z;
-        finalValue = Math.floor(finalValue * 100) / 100;
-        this.setState({
-            left: finalValue
-        }, () => {});
-        this.setState({
-            percent: false
-        })
-    }
-    goLeftPixel = () => {
-        return {
-            transform: `translatex(${this.p}px)`,
-            transition: '0.3s'
-        }
-    }
+    // onMouseMove = (e) => {
+    //     if (!this.isDown) {
+    //         return;
+    //     }
+    //     e.preventDefault();
+    //     var x = e.pageX - this.slider.current.offsetLeft;
+    //     var walk = x - this.startX;
+    //     this.startX = x;
+    //     var z = walk;
+    //     var finalValue = this.state.left + z;
+    //     finalValue = Math.floor(finalValue * 100) / 100;
+    //     this.setState({
+    //         left: finalValue
+    //     }, () => {});
+    //     this.setState({
+    //         percent: false
+    //     })
+    // }
+   
     goLeft = () => {
-        // var slider_width = this.slider.current.offsetWidth;
-        var slide_width = this.slide.current.offsetWidth;
-        if (this.p === 0 || this.p > 0) {
-            var pop = [...this.state.slides];
-            pop.pop();
-            this.setState({
-                slides: [this.state.slides[5], ...pop]
-
-            });
-            this.p = 0;
-            this.setState({
-                left: this.p,
-                percent: true
-            });
-            return;
-
-        }
-        this.p += (slide_width + 20);
-        this.setState({
-            left: this.p,
-            percent: true
-        })
+        var slide_width = this.slide.current.clientWidth;
+        var copyArrayPop = [...this.state.slides];
+        copyArrayPop.pop();
+        var finalArrayPop = [this.state.slides[5], ...copyArrayPop]
+        this.setState(
+          {
+            slides: finalArrayPop,
+            left: -this.state.width,
+            animatedScroll:false
+          },
+          () => {
+              setTimeout(() => {
+                     var newAnimatedScroll = slide_width
+                     console.log(newAnimatedScroll);
+                     
+              this.setState({ 
+                  left: 0,
+                  animatedScroll:true 
+                });
+              }, 200);
+          }
+        );
 
     }
     goRight = () => {
-        var slider_width = this.slider.current.offsetWidth;
-        var slide_width = this.slide.current.offsetWidth;
-        if (this.p < -((slider_width / 2) - (slide_width + 20))) {
-
-
-                var shift = [...this.state.slides];
-                shift.shift();
-                this.setState({
-                    slides: [...shift, this.state.slides[0]]
-
-                });
-                this.p = -(((slide_width + 20)*6)-((slide_width + 20)*3));
-                this.setState({
-                    left: this.p,
-                    percent: true
-                });
-                return;
-            }
-            // var slide_width = this.slide.current.offsetWidth;
-             this.p += -(slide_width + 20); this.setState({
-                left: this.p
-            })
+            var slide_width = this.slide.current.clientWidth;
+            var copyArrayShift = [...this.state.slides];
+            copyArrayShift.shift();
+            var finalArrayShift = [...copyArrayShift, this.state.slides[0]]
+            this.setState(
+              {
+                slides: finalArrayShift,
+                left: 0,
+                animatedScroll:false
+              },
+              () => {
+                  setTimeout(() => {
+                         var newAnimatedScroll = slide_width
+                         console.log(newAnimatedScroll);
+                         
+                  this.setState({ 
+                      left: -this.state.width,
+                      animatedScroll:true 
+                    });
+                  }, 200);
+              }
+            );
         }
 
-        mouseMove = () => {
-            if (this.state.left > 0) {
-                this.setState({
-                    left: 0
-                });
-                return
-            } else if (this.state.left < -981) {
-                this.setState({
-                    left: -981
-                });
-                return
+        // mouseMove = () => {
+        //     if (this.state.left > 0) {
+        //         this.setState({
+        //             left: 0
+        //         });
+        //         return
+        //     } else if (this.state.left < -981) {
+        //         this.setState({
+        //             left: -981
+        //         });
+        //         return
+        //     }
+        //     return {
+        //         transform: `translatex(${this.state.left}px)`
+        //     }
+        // }
+        goLeftPixel = () => {
+            if (this.state.animatedScroll) {
+                return {
+                transition: 'all 0.3s',
+                transform: `translatex(${this.state.left}px)`,
             }
-
-            return {
-                transform: `translatex(${this.state.left}px)`
+            }else{
+                return {
+                    transition: 'none',
+                    transform: `translatex(${this.state.left}px)`,
+                }
             }
         }
-
+        setLi=()=>{
+return{
+    width:this.state.width
+}
+        }
+        componentDidMount(){
+            window.addEventListener("resize", () => {
+                console.log("window resize");
+          
+            var slideeWidth = this.slider.current.clientWidth;
+            if (window.innerWidth < 480) {
+              slideeWidth = this.slider.current.clientWidth / 1;
+              // return
+            } else if (window.innerWidth < 1200) {
+              slideeWidth = this.slider.current.clientWidth / 2;
+              console.log(slideeWidth);
+              // return
+            } else {
+              slideeWidth = this.slider.current.clientWidth / 3;
+            }
+            console.log({ width: this.state.width });
+            this.setState({ width: slideeWidth ,left:-(slideeWidth)});
+            if (window.innerWidth<1200) {
+                this.marginPlusWidth = this.state.width + 15*2;
+            }
+            if (window.innerWidth>1200) {
+                
+            this.marginPlusWidth = this.state.width + 25*2;
+            }
+          });
+      
+          var slideeWidth = this.slider.current.clientWidth;
+          if (window.innerWidth < 480) {
+            slideeWidth = this.slider.current.clientWidth / 1;
+            // return
+          } else if (window.innerWidth < 1200) {
+            slideeWidth = this.slider.current.clientWidth / 2;
+            console.log(slideeWidth);
+          } else {
+            slideeWidth = this.slider.current.clientWidth / 3;
+          } 
+          this.setState({ width: slideeWidth }, () => {
+            this.setState({ left: -(this.state.width) });
+            console.log(this.state.scroll);
+            
+            console.log({ width: this.state.width });
+            this.setLi();
+          });
+        }
 
 
         render() {
 
 
             return ( <div className = "slider" >
-                <div className = "slider-wrapper" >
-                <div onMouseDown = {
-                    this.onMouseDown
-                }
+                <div ref={this.slider} className = "slider-wrapper" >
+                <div 
+                // onMouseDown = {
+                //     this.onMouseDown
+                // }
                 style = {
                     this.state.percent ? this.goLeftPixel() : this.mouseMove()
                 }
-                onMouseUp = {
-                    this.onMouseUp
-                }
-                onMouseLeave = {
-                    this.onMouseLeave
-                }
-                onMouseMove = {
-                    this.onMouseMove
-                }
+                // onMouseUp = {
+                //     this.onMouseUp
+                // }
+                // onMouseLeave = {
+                //     this.onMouseLeave
+                // }
+                // onMouseMove = {
+                //     this.onMouseMove
+                // }
                 ref = {
-                    this.slider
+                    this.slideContainer
                 }
                 className = "slider-container" > {
                     this.state.slides.map(slide => ( <div ref = {
@@ -193,11 +251,11 @@ export class slider extends Component {
                         key = {
                             slide.id
                         }
-                        className = "slide" >
+                        className = "slide" style={this.setLi()}>
                         <img src = {
                             slide.src
                         }
-                        alt = "" / >
+                        alt = "" />
                         <div className = "overlay" >
                         <h1> {
                             slide.name

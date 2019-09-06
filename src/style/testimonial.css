@@ -220,4 +220,7 @@
        top: -55px;
        right: 30px;
    }
+   .testimonial-slider-img{
+       width: 100%;
+   }
 }

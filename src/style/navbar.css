@@ -99,3 +99,19 @@ width: 100%;
     margin:9px 0;
     
 }
+@media only screen and (max-width:480px){
+    .navbar-items{
+        width: 120px;
+    }
+    .icon{
+        width: 40px;
+    }
+    .burger-wrapper{
+        width: 40px;
+    }
+}
+@media only screen and (max-width:380px){
+    .logo img{
+        width: 100px;
+    }
+}

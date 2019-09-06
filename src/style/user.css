@@ -37,9 +37,10 @@
 }
 
 .user-wrapper {
-    width: 1170px;
+    width: 80%;
     margin: 70px auto;
-    height: 780px;
+    max-height: 780px;
+    height: auto;
     background: white;
     border-radius: 5px;
     animation-duration: 0.5s;
@@ -146,10 +147,12 @@
 }
 
 .login-input-container h1, .register-input-container h1 {
-    font-size: 2.8em;
-    color: #20201D;
-    margin-top: 20px;
+    box-sizing: border-box;
     margin-bottom: 10px;
+    margin-top: 35px;
+    color: rgb(32, 32, 29);
+    font-weight: 400;
+    letter-spacing: -0.025em;
 }
 
 .login-input-container p, .register-input-container p {
@@ -292,3 +295,59 @@
     width: 50%;
     height: 100%;
 }
+@media only screen and (min-width:840px){
+    .login-input-container h1, .register-input-container h1 {
+        font-size:42px;
+    }
+    .login-form{
+        margin-left: 25px;
+    }
+}
+@media only screen and (min-width:1200px){
+    .user-wrapper{
+        width: 100%;
+        max-width: 1170px;
+    }
+ }
+ 
+@media only screen and (min-width:1500px){
+    .login-input-container h1, .register-input-container h1 {
+        font-size:45px;
+    }
+}
+@media only screen and (max-width:1250px){
+   .login-form{
+       width: 100%;
+       max-width: 360px;
+       margin-left: 0;
+       padding: 10px;
+   }
+}
+@media only screen and (max-width:991px){
+    .user-bg{
+        display: none;
+    }
+    .user-form{
+        width: 100%;
+        padding: 38px;
+    }
+    .login-form{
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        padding-top: 50px;
+    }
+ }
+ @media only screen and (max-width:600px){
+    
+    .user-form{
+        padding: 20px;
+    }
+ }
+ @media only screen and (max-width:480px){
+    
+    .user-form{
+        padding: 10px;
+    }
+ }
+ 

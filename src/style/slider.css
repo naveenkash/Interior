@@ -192,9 +192,18 @@
         width: 55%;
     }
 }
-@media only screen and (max-width:767px){
+@media only screen and (max-width:768px){
    
     .slider{
         width: 100%;
     }
+    .slider-container{
+        width: 300%;
+    }
 }
+@media only screen and (max-width:480px){
+    
+    .slider-container{
+        width: 600%;
+    }
+ }

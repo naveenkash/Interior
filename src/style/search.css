@@ -44,6 +44,7 @@
 }
 .search-input{
     width:600px;
+    /* width: 100%; */
     height: auto;
     /* background: firebrick; */
     animation-duration: 0.7s;
@@ -101,4 +102,26 @@ letter-spacing: -0.025em;
     -webkit-font-smoothing: antialiased;
     text-shadow: rgba(0, 0, 0, 0.004) 1px 1px 1px;
     font-family:'Roboto', sans-serif;
+}
+@media only screen and (max-width:768px){
+    .search-input{
+        width: 450px;
+    }
+}
+@media only screen and (max-width:500px){
+    .search-wrapper{
+        width: 100%;
+        padding: 0 30px;
+    }
+    .search-input{
+        width: 100%;
+    }
+}
+@media only screen and (max-width:350px){
+    .input-wrapper input{
+        font-size: 14px;
+        padding-right: 60px;
+        padding-left: 29px;
+    }
+    
 }

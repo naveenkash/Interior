@@ -230,8 +230,37 @@ margin-right: 7px;
     .consult-btn button{
         font-size: 12px;
     }
-    .explore-more a{
+    /* .explore-more a{
         
         font-size: 12px;
+    } */
+}
+@media only screen and (max-width:480px){
+    .consult{
+        padding-right: 0px;
+    }
+   
+}
+@media only screen and (max-width:430px){
+    .craft h1{
+        font-size: 2.1em;
+    }
+   
+}
+@media only screen and (max-width:380px){
+    .craft h1{
+        font-size: 1.8em;
+    }
+   
+}
+@media only screen and (max-width:350px){
+    .discount-heading p{
+        font-size:9px;
+    }
+    .explore-more a p{
+        font-size: 10px;
+    } 
+    .consult-btn button{
+        font-size: 10px;
     }
 }

@@ -68,13 +68,15 @@ export class navbar extends Component {
 
     }
     closeNav=(e)=>{
+        e.stopPropagation();
+        
             e.preventDefault();
             this.props.close(!this.state.open)
         
     }
     render() {
         return (
-            <div className="navbar_menu_container">
+            <div onClick={this.closeNav} className="navbar_menu_container">
             <div className="animated navbar_menu fadeInRight">
                 <div className="navbar_menu_wrapper">
                     <ul>
