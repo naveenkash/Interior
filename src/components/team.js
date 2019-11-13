@@ -325,7 +325,6 @@ export class team extends Component {
         () => {
             setTimeout(() => {
                    var newAnimatedScroll = this.state.width
-                   console.log(newAnimatedScroll);
                    
             this.setState({ 
                 scroll: 0,
@@ -336,9 +335,7 @@ export class team extends Component {
       );
   };
   next = () => {
-      console.log( this.marginPlusWidth);
       this.marginPlusWidth = 25*2;
-      console.log( this.marginPlusWidth );
       
     var CopyArray = [...this.state.team];
     CopyArray.shift(); //removes first item
@@ -346,7 +343,6 @@ export class team extends Component {
     // var Slidemargin = this.slide.current.style.marginLeft + this.slide.current.style.marginRight;
   
     var finalScrollValue = this.state.width
-    console.log(finalScrollValue);
     
     this.setState(
       {
@@ -357,7 +353,6 @@ export class team extends Component {
       () => {
           setTimeout(() => {
                  var newAnimatedScroll = this.state.width
-                 console.log(newAnimatedScroll);
                  
           this.setState({ 
               scroll: -newAnimatedScroll,
@@ -372,10 +367,7 @@ export class team extends Component {
       "transitionend",
       this.animateContainerListener
     );
-    console.log("transitionend", e.propertyName);
-    console.log(e);
     if (e.propertyName === "transform") {
-      console.log("adding to state");
       this.setState(
         {
           scroll: -this.state.width + 25 * 2
@@ -413,7 +405,6 @@ export class team extends Component {
 };
 
   componentDidMount() {
-    console.log("componentDidMount");
     window.addEventListener("scroll", () => {
       var container = document.querySelector(".team");
       var head = document.querySelector(".team-head");
@@ -434,7 +425,6 @@ export class team extends Component {
     });
 
     window.addEventListener("resize", () => {
-      console.log("window resize");
 
       var slideeWidth = this.slider.current.clientWidth;
       if (window.innerWidth < 480) {
@@ -442,12 +432,10 @@ export class team extends Component {
         // return
       } else if (window.innerWidth < 768) {
         slideeWidth = this.slider.current.clientWidth / 2;
-        console.log(slideeWidth);
         // return
       } else {
         slideeWidth = this.slider.current.clientWidth / 3;
       }
-      console.log({ width: this.state.width });
       this.setState({ width: slideeWidth ,scroll:-(slideeWidth)});
       if (window.innerWidth<1200) {
           this.marginPlusWidth = this.state.width + 15*2;
@@ -464,7 +452,6 @@ export class team extends Component {
       // return
     } else if (window.innerWidth < 768) {
       slideeWidth = this.slider.current.clientWidth / 2;
-      console.log(slideeWidth);
       
       // return
     } else {
@@ -480,13 +467,9 @@ export class team extends Component {
     // this.setState({width:slideeWidth})
     this.setState({ width: slideeWidth }, () => {
       this.setState({ scroll: -(this.state.width) });
-      console.log(this.state.scroll);
-      
-      console.log({ width: this.state.width });
       this.setLi();
       // this.moveT(precentage);
       //         var precentage = Math.floor(((this.state.width/slideeWidth)*100)*2)
-      // console.log(precentage);
     });
   }
   render() {

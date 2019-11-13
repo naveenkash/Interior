@@ -1,75 +1,84 @@
-.aboutus{
+.aboutus {
     width: 100%;
     height: auto;
     padding: 80px 0;
-
 }
-.aboutus-wrapper{
-    max-width:1627px;
+
+.aboutus-wrapper {
+    max-width: 1627px;
     margin: 0 auto;
-/*      
+    /*      
     overflow: hidden; */
+    width: 100%;
     height: auto;
     display: flex;
     align-items: center;
 }
 
-.about-img{
+.about-img {
     width: calc(100% - 507px);
     padding-right: 75px;
 }
-.about-img img{
+
+.about-img img {
     max-width: 100%;
     height: auto;
 }
-.about-content{
+
+.about-content {
     width: 507px;
     height: auto;
     overflow: hidden;
 }
-.about-head{
+
+.about-head {
     width: 100%;
     height: auto;
     margin-bottom: 30px;
 }
+
 /* .about-head h2{
     color: rgb(25, 25, 25);
     font-size: 40px;
     line-height: 56px;
     font-family: 'Raleway', sans-serif;
 } */
+
 .about-info {
     width: 100%;
     height: auto;
     position: relative
 }
-.about-info p{
+
+.about-info p {
     color: rgb(78, 88, 101);
     font-size: 16px;
     line-height: 26px;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 30px;
 }
-.p1{
-        animation-delay: 0.3s;
-        animation-fill-mode: forwards;
-        transform: translatex(500px);
+
+.p1 {
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+    transform: translatex(500px);
 }
-.p2{
+
+.p2 {
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
     transform: translatex(600px);
 }
-.about-visit{
+
+.about-visit {
     width: 100%;
     height: auto;
     transform: translatex(700px);
-
     animation-delay: 0.8s;
     animation-fill-mode: forwards;
 }
 
-.about-visit a{
+.about-visit a {
     display: inline-flex;
     margin-top: 12px;
     -webkit-box-align: center;
@@ -81,17 +90,20 @@
     position: relative;
     text-decoration: none;
 }
-.btn-txt{
+
+.btn-txt {
     text-transform: uppercase;
     margin-right: 12px;
 }
-.next_arrow{
+
+.next_arrow {
     width: 35px;
     height: 2px;
     background: rgb(53, 47, 217);
     position: relative;
 }
-.next_arrow::before{
+
+.next_arrow::before {
     position: absolute;
     top: -5px;
     right: -2px;
@@ -101,7 +113,8 @@
     background: rgb(53, 47, 217);
     transform: rotate(40deg);
 }
-.next_arrow::after{
+
+.next_arrow::after {
     position: absolute;
     bottom: -5px;
     right: -2px;
@@ -111,51 +124,57 @@
     background: rgb(53, 47, 217);
     transform: rotate(-40deg);
 }
-.about-visit a:hover .next_arrow{
+
+.about-visit a:hover .next_arrow {
     animation: nxtarr 1s infinite ease;
 }
-@keyframes nxtarr{
-    from{
+
+@keyframes nxtarr {
+    from {
         transform: translatex(0px);
     }
-    to{
-        transform: translatex(15px);}
+    to {
+        transform: translatex(15px);
+    }
 }
-@media only screen and (max-width:1360px){
-   .aboutus-wrapper{
-       padding: 0 30px;
-   }
-}@media only screen and (max-width:991px){
-   .about-img{
-       padding-right: 0;
-   }
-   .about-content{
-       padding-left: 50px;
-   }
+@media only screen and (max-width:1630px) {
+    .aboutus-wrapper {
+        padding: 0 30px;
+    }
 }
-@media only screen and (max-width:850px){
-    .about-img{
+
+
+@media only screen and (max-width:991px) {
+    .about-img {
+        padding-right: 0;
+    }
+    .about-content {
+        padding-left: 50px;
+    }
+}
+
+@media only screen and (max-width:850px) {
+    .about-img {
         width: calc(100% - 407px)
     }
-    .about-content{
+    .about-content {
         width: 407px;
     }
- }
- @media only screen and (max-width:767px){
-     .aboutus-wrapper{
-         flex-direction: column;
-     }
-     .aboutus{
-         
-        padding: 42px 0;
-     }
-     .about-img{
-        width: 100%;
-        margin-bottom: 30px;   
+}
+
+@media only screen and (max-width:767px) {
+    .aboutus-wrapper {
+        flex-direction: column;
     }
-    .about-content{
+    .aboutus {
+        padding: 42px 0;
+    }
+    .about-img {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .about-content {
         width: 100%;
         padding-left: 0;
     }
- }
- 
+}
