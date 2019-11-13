@@ -70,7 +70,8 @@ export class testimonial extends Component {
                 { img: profileimg3, class: 'btn3', id: this.rdId3 ,btnRef : this.btnRef3},
                 { img: profileimg4, class: 'btn4', id: this.rdId4 ,btnRef : this.btnRef4},
                 { img: profileimg5, class: 'btn5', id: this.rdId5 ,btnRef : this.btnRef5},
-            ]
+            ],
+            width:0
         }
         this.t = 0;
     }

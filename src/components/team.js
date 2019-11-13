@@ -3,6 +3,10 @@ import "../style/team.css";
 import member1 from "../assets/member1.jpg";
 import member2 from "../assets/member2.jpg";
 import member3 from "../assets/member3.jpg";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 export class team extends Component {
   constructor(props) {
     super(props);
@@ -312,97 +316,6 @@ export class team extends Component {
     this.s = this.state.scroll;
     this.marginPlusWidth = 0;
   }
-  back = () => {
-      var copyArrayPop = [...this.state.team];
-      copyArrayPop.pop();
-      var finalArrayPop = [this.state.team[5], ...copyArrayPop]
-      this.setState(
-        {
-          team: finalArrayPop,
-          scroll: -this.state.width,
-          animatedScroll:false
-        },
-        () => {
-            setTimeout(() => {
-                   var newAnimatedScroll = this.state.width
-                   
-            this.setState({ 
-                scroll: 0,
-                animatedScroll:true 
-              });
-            }, 200);
-        }
-      );
-  };
-  next = () => {
-      this.marginPlusWidth = 25*2;
-      
-    var CopyArray = [...this.state.team];
-    CopyArray.shift(); //removes first item
-    var finalArray = [...CopyArray, this.state.team[0]];
-    // var Slidemargin = this.slide.current.style.marginLeft + this.slide.current.style.marginRight;
-  
-    var finalScrollValue = this.state.width
-    
-    this.setState(
-      {
-        team: finalArray,
-        scroll: 0,
-        animatedScroll:false
-      },
-      () => {
-          setTimeout(() => {
-                 var newAnimatedScroll = this.state.width
-                 
-          this.setState({ 
-              scroll: -newAnimatedScroll,
-              animatedScroll:true 
-            });
-          }, 200);
-      }
-    );
-  };
-  animateContainerListener = e => {
-    this.container.current.removeEventListener(
-      "transitionend",
-      this.animateContainerListener
-    );
-    if (e.propertyName === "transform") {
-      this.setState(
-        {
-          scroll: -this.state.width + 25 * 2
-        },
-        () => {
-          this.container.current.style.transition = "none";
-          // this.container.current.style.transform = 'translate(0)';
-          setTimeout(() => {
-            this.container.current.style.transition = "all 0.5s";
-          });
-        }
-      );
-    }
-  };
-  setLi = () => {
-    return {
-        width: this.state.width
-    };
-  };
-  moveT = () => {
-  if (this.state.animatedScroll) {
-    return {
-      transition: "all 0.5s",
-      transform: `translatex(${this.state.scroll}px)`,
-      
-      height: "100%"
-    };
-  } else {
-    return {
-      transition: "none",
-      transform: `translatex(${this.state.scroll}px)`,
-      height: "100%"
-    };
-  }
-};
 
   componentDidMount() {
     window.addEventListener("scroll", () => {
@@ -423,57 +336,41 @@ export class team extends Component {
         glides.classList.remove("hide");
       }
     });
-
-    window.addEventListener("resize", () => {
-
-      var slideeWidth = this.slider.current.clientWidth;
-      if (window.innerWidth < 480) {
-        slideeWidth = this.slider.current.clientWidth / 1;
-        // return
-      } else if (window.innerWidth < 768) {
-        slideeWidth = this.slider.current.clientWidth / 2;
-        // return
-      } else {
-        slideeWidth = this.slider.current.clientWidth / 3;
-      }
-      this.setState({ width: slideeWidth ,scroll:-(slideeWidth)});
-      if (window.innerWidth<1200) {
-          this.marginPlusWidth = this.state.width + 15*2;
-      }
-      if (window.innerWidth>1200) {
-          
-      this.marginPlusWidth = this.state.width + 25*2;
-      }
-    });
-
-    var slideeWidth = this.slider.current.clientWidth;
-    if (window.innerWidth < 480) {
-      slideeWidth = this.slider.current.clientWidth / 1;
-      // return
-    } else if (window.innerWidth < 768) {
-      slideeWidth = this.slider.current.clientWidth / 2;
-      
-      // return
-    } else {
-      slideeWidth = this.slider.current.clientWidth / 3;
-    } 
-    // if (window.innerWidth<1200) {
-    //     this.marginPlusWidth = this.state.width + 15*2;
-    // }
-    // if (window.innerWidth>1200) {
-    //     this.marginPlusWidth = this.state.width + 25*2;
-    // }
-
-    // this.setState({width:slideeWidth})
-    this.setState({ width: slideeWidth }, () => {
-      this.setState({ scroll: -(this.state.width) });
-      this.setLi();
-      // this.moveT(precentage);
-      //         var precentage = Math.floor(((this.state.width/slideeWidth)*100)*2)
-    });
   }
+  previous = () => {
+    this.slider.slickNext();
+  };
+  next = () => {
+    this.slider.slickPrev();
+  };
   render() {
- 
+    var settings = {
+      infinite: true,
+      speed: 500,
+      dots: false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: false,
+      mobileFirst: true,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true
+          }
+        }
+      ]
+    };
     return (
       <div className="team">
         <div className="team-wrapper">
@@ -483,43 +380,36 @@ export class team extends Component {
               <h2>Meet Our Perfectionist</h2>
             </div>
             <div ref={this.slider} className="team-slider-container hide">
-              <ul
-                ref={this.container}
-                style={this.moveT()}
-                className="team-slider"
-              >
-                {this.state.team.map(t => (
-                  <li
-                    ref={this.slide}
-                    key={t.id}
-                    style={this.setLi()}
-                    className="team-slide"
-                  >
-                    <div className="team-img">
-                      <img src={t.memberImg} alt="" />
-                      <div className="team-info">
-                        <h3>{t.memberName}</h3>
-                        <p>{t.memberRole}</p>
+              <ul ref={this.container}>
+                <Slider ref={c => (this.slider = c)} {...settings}>
+                  {this.state.team.map(t => (
+                    <li ref={this.slide} key={t.id}>
+                      <div className="team-img">
+                        <img src={t.memberImg} alt="" />
+                        <div className="team-info">
+                          <h3>{t.memberName}</h3>
+                          <p>{t.memberRole}</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="team-social">
-                      <ul>
-                        {this.state.social.map(icon => (
-                          <li key={icon.id}>
-                            <a href={icon.link}>
-                              <i>{icon.svg}</i>
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </li>
-                ))}
+                      <div className="team-social">
+                        <ul>
+                          {this.state.social.map(icon => (
+                            <li key={icon.id}>
+                              <a href={icon.link}>
+                                <i>{icon.svg}</i>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </li>
+                  ))}
+                </Slider>
               </ul>
             </div>
 
             <div className="slide-glider team-glide hide">
-              <div onClick={this.back} className="glide-prev">
+              <div onClick={this.previous} className="glide-prev">
                 {" "}
                 <div className="glide-prev-left">
                   <div className="glide-prev-top"></div>{" "}

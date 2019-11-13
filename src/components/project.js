@@ -16,7 +16,12 @@ export class project extends Component {
     };
     this.moveDir = this.state.move;
   }
-
+  next = () => {
+    this.slider.slickNext();
+  };
+  previous = () => {
+    this.slider.slickPrev();
+  };
   render() {
     const project = [
       {
@@ -117,7 +122,7 @@ export class project extends Component {
               </Slider>
 
               <div className="slide-glider">
-                <div onClick={this.back} className="glide-prev">
+                <div onClick={this.previous} className="glide-prev">
                   <div className="glide-prev-left">
                     <div className="glide-prev-top"></div>
                     <div className="glide-prev-bottom"></div>

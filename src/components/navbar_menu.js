@@ -64,7 +64,6 @@ export class navbar extends Component {
                 li.classList.remove('nav_active')
             }
         }
-        console.log(lis);
 
     }
     closeNav=(e)=>{
